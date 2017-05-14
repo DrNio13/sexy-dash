@@ -1,0 +1,7 @@
+.results {
+  background: #e4e4e4;
+}
+
+:host /deep/ .super-class {
+  color: green;
+}

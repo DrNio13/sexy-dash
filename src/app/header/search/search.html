@@ -1,0 +1,12 @@
+<div class="col-xs-12">
+  <p>searching for : {{searchingFor}}</p>
+  <p *ngIf="results.length > 0">number of results : {{results.length}}</p>
+  <input type="text" placeholder="search" (input)="onSearch($event.target.value)">
+</div>
+<div class="col-xs-12 results">
+  <ul>
+    <li *ngFor="let result of results;">
+      <span class="skata" [innerHTML]="result.titleWithStyle"></span>
+    </li>
+  </ul>
+</div>
