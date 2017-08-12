@@ -1,0 +1,25 @@
+<div class="col-xs-7">
+  <app-header></app-header>
+
+  <h4>All users</h4>
+  <div>
+    <ul *ngFor="let user of users">
+      <li>
+        <span>{{user.username}}</span>
+        <span>{{user.password}}</span>
+      </li>
+    </ul>
+  </div>
+
+  <app-nav></app-nav>
+  <br>
+  <br>
+
+  <button (click)="getUserPosition()">Get user location</button>
+  <p *ngIf="enableMessage">{{loadingMessage}}</p>
+
+  <div *ngIf="userPosition">
+    <p>latitude : {{userPosition.coords.latitude}}</p>
+    <p>longitude : {{userPosition.coords.longitude}}</p>
+  </div>
+</div>

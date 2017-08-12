@@ -1,0 +1,13 @@
+<h5>Public Login Page Component</h5>
+
+<form (ngSumbit)="loginForm.form.valid && login()" #loginForm="ngForm">
+  <label for="username" >Username</label>
+  <input id="username" name="username" type="text" [(ngModel)]="userModel.username" #username="ngModel" required />
+
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password" [(ngModel)]="userModel.password" #password="ngModel">
+
+  <button class="btn btn-primary" (click)="login()">Login</button>
+  <button (click)="register()">Register</button>
+  <div *ngIf="error">{{error}}</div>
+</form>

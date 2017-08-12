@@ -1,0 +1,28 @@
+.drag-item {
+  background: darkcyan;
+  height: 100px;
+  margin-left: 10px;
+
+  &.activeEl {
+    opacity: 0.7;
+  }
+}
+
+.accept-drag-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e4e4e4;
+  color: midnightblue;
+  height: 150px;
+  border: 10px dashed transparent;
+
+  -webkit-transition: border-color 0.2s ease-out;
+  -moz-transition: border-color 0.2s ease-out;
+  transition: border-color 0.2s ease-out;
+
+  &.active {
+    border: 10px dashed darkcyan;
+  }
+}

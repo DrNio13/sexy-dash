@@ -1,0 +1,18 @@
+<hr>
+<div id="accept-drag" class="accept-drag-area col-xs-3" [class.active]="activeArea === true"
+     (drop)="onDrop($event)" (dragend)="onDragEnd()"
+     (dragenter)="onDragEnter($event)"
+     (dragover)="onDragOver($event)"
+      (dragleave)="activeArea = false;">
+  <h4 class="row middle-xs">Drag items here</h4>
+
+</div>
+
+<div class="row">
+  <article *ngFor="let dragItem of dragItems;" id="drag-item-{{dragItem.id}}" [class.activeEl]="dragItem.active"
+       class="col-sm-{{grid}} drag-item"
+       draggable="true" (drag)="dragItem.active = true" (dragstart)="onDragStart($event)" (dragend)="dragItem.active = false">
+    <p>{{dragItem.id}}</p>
+    <p>{{dragItem.description}}</p>
+  </article>
+</div>
